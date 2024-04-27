@@ -74,4 +74,5 @@ Nest is [MIT licensed](LICENSE).
 
 ## Learnings: 
 
+ - https://learn.nestjs.com/ course 
  - NestJS Kubernetes Deployment | Containerization [Containerization](https://huseyinnurbaki.medium.com/nestjs-kubernetes-deployment-part-1-containerization-1e06b054b875).

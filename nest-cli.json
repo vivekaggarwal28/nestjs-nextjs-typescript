@@ -18,13 +18,13 @@
         "tsConfigPath": "apps/nest-events-backend/tsconfig.app.json"
       }
     },
-    "my-app": {
+    "iluvcoffee": {
       "type": "application",
-      "root": "apps/my-app",
+      "root": "apps/iluvcoffee",
       "entryFile": "main",
-      "sourceRoot": "apps/my-app/src",
+      "sourceRoot": "apps/iluvcoffee/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/my-app/tsconfig.app.json"
+        "tsConfigPath": "apps/iluvcoffee/tsconfig.app.json"
       }
     },
     "my-library": {
