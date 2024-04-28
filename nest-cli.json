@@ -1,12 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/nest-events-backend/src",
+  "sourceRoot": "apps/iluvcoffee/src",
   "monorepo": true,
-  "root": "apps/nest-events-backend",
+  "root": "apps/iluvcoffee",
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "apps/nest-events-backend/tsconfig.app.json"
+    "tsConfigPath": "apps/iluvcoffee/tsconfig.app.json"
   },
   "projects": {
     "nest-events-backend": {
