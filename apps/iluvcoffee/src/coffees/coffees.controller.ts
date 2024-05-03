@@ -3,42 +3,46 @@ import {
   Controller,
   Delete,
   Get,
+  NotFoundException,
   Param,
   Patch,
   Post,
   Query,
   Res,
 } from '@nestjs/common';
+import { CoffeesService } from './coffees.service';
 
 @Controller('coffees')
 export class CoffeesController {
+  constructor(private readonly coffeesService: CoffeesService) {}
+
   @Get()
-  findAll(@Res() response, @Query() paginationQuery) {
-    const { limit, offset } = paginationQuery;
-    response
-      .status(200)
-      .send(
-        `This action returns all the coffees. Limit: ${limit}, Offset: ${offset}`,
-      );
+  findAll(@Query() paginationQuery) {
+    // const { limit, offset } = paginationQuery;
+    return this.coffeesService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return `This action returns #${id} coffee`;
+    const coffee = this.coffeesService.findOne(id);
+    if (!coffee) {
+      throw new NotFoundException(`Coffee #${id} not found`);
+    }
+    return coffee;
   }
 
   @Post()
   create(@Body() body: any) {
-    return body;
+    return this.coffeesService.create(body);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() body: any) {
-    return `This action updates #${id} coffee`;
+    return this.coffeesService.update(id, body);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return `This action removes #${id} coffee`;
+    return this.coffeesService.remove(id);
   }
 }
