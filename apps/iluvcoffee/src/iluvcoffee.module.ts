@@ -7,7 +7,7 @@ import { CoffeesModule } from './coffees/coffees.module';
 
 @Module({
   imports: [CoffeesModule],
-  controllers: [IluvcoffeeController, CoffeesController],
-  providers: [IluvcoffeeService, CoffeesService],
+  controllers: [IluvcoffeeController],
+  providers: [IluvcoffeeService],
 })
 export class IluvcoffeeModule {}
