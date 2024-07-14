@@ -4,10 +4,22 @@ import { IluvcoffeeController } from './iluvcoffee.controller';
 import { IluvcoffeeService } from './iluvcoffee.service';
 import { CoffeesModule } from './coffees/coffees.module';
 import { ConfigModule } from '@nestjs/config';
+import * as Joi from '@hapi/joi';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      envFilePath:
+        process.env.NODE_ENV === 'production'
+          ? 'env/production.env'
+          : 'env/development.env',
+      // envFilePath: ${process.env.NODE_ENV === 'development' ? '.env.development' : '.env.test'},
+      isGlobal: true,
+      validationSchema: Joi.object({
+        DATABASE_HOST: Joi.required(),
+        DATABASE_PORT: Joi.number().default(5432),
+      }),
+    }),
     CoffeesModule,
     TypeOrmModule.forRoot({
       type: 'postgres', // type of our database
