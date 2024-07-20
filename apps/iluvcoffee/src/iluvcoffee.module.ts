@@ -4,6 +4,7 @@ import { IluvcoffeeController } from './iluvcoffee.controller';
 import { IluvcoffeeService } from './iluvcoffee.service';
 import { CoffeesModule } from './coffees/coffees.module';
 import { ConfigModule } from '@nestjs/config';
+import { CommonModule } from './common/common.module';
 import * as Joi from '@hapi/joi';
 
 @Module({
@@ -31,6 +32,7 @@ import * as Joi from '@hapi/joi';
       autoLoadEntities: true, // models will be loaded automatically
       synchronize: true, // your entities will be synced with the database(recommended: disable in prod)
     }),
+    CommonModule,
   ],
   controllers: [IluvcoffeeController],
   providers: [IluvcoffeeService],
