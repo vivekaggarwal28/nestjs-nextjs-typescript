@@ -6,7 +6,8 @@
   "root": "apps/iluvcoffee",
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "apps/iluvcoffee/tsconfig.app.json"
+    "tsConfigPath": "apps/iluvcoffee/tsconfig.app.json",
+    "plugins": ["@nestjs/swagger/plugin"]
   },
   "projects": {
     "nest-events-backend": {
