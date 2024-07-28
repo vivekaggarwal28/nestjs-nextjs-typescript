@@ -16,12 +16,11 @@ export class CoffeesService {
     private readonly coffeeRepository: Repository<Coffee>,
     @InjectRepository(Flavor)
     private readonly flavorRepository: Repository<Flavor>,
-    private readonly dataSource: DataSource,
-    private readonly configService: ConfigService,
-    @Inject('COFFEE_BRANDS') coffeeBrands: string[],
-  ) {
-    console.log(coffeeBrands);
-    console.log(this.configService.get<string>('ENV'));
+    private readonly dataSource: DataSource, // @Inject('COFFEE_BRANDS') coffeeBrands: string[],
+  ) // private readonly configService: ConfigService,
+  {
+    // console.log(coffeeBrands);
+    // console.log(this.configService.get<string>('ENV'));
   }
 
   findAll(paginationQuery: PaginationQueryDto) {
