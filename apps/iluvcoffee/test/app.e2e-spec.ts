@@ -20,7 +20,7 @@ describe('IluvcoffeeController (e2e)', () => {
       .get('/')
       .set('Authorization', process.env.API_KEY)
       .expect(200)
-      .expect('Hello NestJS!');
+      .expect('Hello World!');
   });
 
   afterAll(async () => {

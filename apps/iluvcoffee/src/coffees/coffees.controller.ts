@@ -7,6 +7,7 @@ import {
   Patch,
   Post,
   Query,
+  Injectable,
 } from '@nestjs/common';
 import { CoffeesService } from './coffees.service';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
@@ -18,6 +19,7 @@ import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('coffees')
 @Controller('coffees')
+@Injectable()
 export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}
 
