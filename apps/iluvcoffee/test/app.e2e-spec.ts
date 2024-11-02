@@ -6,7 +6,7 @@ import { IluvcoffeeModule } from './../src/iluvcoffee.module';
 describe('IluvcoffeeController (e2e)', () => {
   let app: INestApplication;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [IluvcoffeeModule],
     }).compile();
@@ -18,7 +18,12 @@ describe('IluvcoffeeController (e2e)', () => {
   it('/ (GET)', () => {
     return request(app.getHttpServer())
       .get('/')
+      .set('Authorization', process.env.API_KEY)
       .expect(200)
       .expect('Hello World!');
+  });
+
+  afterAll(async () => {
+    await app.close();
   });
 });

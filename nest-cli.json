@@ -6,7 +6,8 @@
   "root": "apps/iluvcoffee",
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "apps/iluvcoffee/tsconfig.app.json"
+    "tsConfigPath": "apps/iluvcoffee/tsconfig.app.json",
+    "plugins": ["@nestjs/swagger/plugin"]
   },
   "projects": {
     "nest-events-backend": {
@@ -34,15 +35,6 @@
       "sourceRoot": "libs/my-library/src",
       "compilerOptions": {
         "tsConfigPath": "libs/my-library/tsconfig.lib.json"
-      }
-    },
-    "my-library-2": {
-      "type": "library",
-      "root": "libs/my-library-2",
-      "entryFile": "index",
-      "sourceRoot": "libs/my-library-2/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/my-library-2/tsconfig.lib.json"
       }
     }
   }
